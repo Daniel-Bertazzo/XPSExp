@@ -18,7 +18,7 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'XPS Experiment class'
+project = 'XPSExp module'
 copyright = '2021, Daniel Bertazzo'
 author = 'Daniel Bertazzo'
 
