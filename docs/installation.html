@@ -87,7 +87,11 @@
             
               <p class="caption"><span class="caption-text">Contents</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="XPS_Experiment.html">Class documentation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="example1.html">Example 1</a></li>
 <li class="toctree-l1"><a class="reference internal" href="example2.html">Example 2</a></li>
@@ -160,12 +164,23 @@
             
   <div class="section" id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
-<p>This module consists of a single class contained in <code class="docutils literal notranslate"><span class="pre">XPS_Experiment.py</span></code>, therefore there is no actual installation process.
-You just need to download the file mentioned and keep it in your project directory. However, you do need to have the library
-<a class="reference external" href="http://xarray.pydata.org/en/stable/">Xarray</a> installed, because that’s the data structure used to store the data in
-this class. To import it to your code and use its features, import it like so:</p>
+<div class="section" id="requirements">
+<h2>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<p>In order to use this module, you must have the following Python libraries installed:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pandas.pydata.org/">Pandas</a></p></li>
+<li><p><a class="reference external" href="https://numpy.org/">Numpy</a></p></li>
+<li><p><a class="reference external" href="http://xarray.pydata.org/en/stable/">Xarray</a></p></li>
+</ul>
+</div>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p>This module consists of a single class contained in <code class="docutils literal notranslate"><span class="pre">XPS_Experiment.py</span></code>, therefore there is no actual installation
+process. You just need to download the file mentioned and keep it in your project directory.
+To import it to your code and use its features, do it like so:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">XPS_Experiment</span> <span class="kn">import</span> <span class="n">XPS_Experiment</span>
 </pre></div>
+</div>
 </div>
 </div>
 
