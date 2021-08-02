@@ -593,3 +593,39 @@ class XPS_Experiment:
                 f.write(str(self.int_data[i].values) + '\n')
 
             f.write("end of experiment\n")
+
+
+def convert_directory(path=os.getcwd()):
+    """Converts all `.txt` XPS experiment files in a given directory to
+    `.vms`. If this function tries to process a random `.txt` file, i.e.,
+    a file not containing a XPS experiment, it will ignore it.
+
+    Args:
+        path (str): path of directory containing the `.txt` files.
+            Default is the current working directory.
+    """
+
+    for file_name in os.listdir(path):
+        if file_name.endswith(".txt"):
+
+            try:
+                
+                print("Generating vamas file for \"", file_name, "\"", sep="")
+
+                file_name = path + "/" + file_name
+
+                experiment = XPS_Experiment()
+                experiment.read_file(file_name)
+                
+                experiment.integrate()
+
+                out_name = file_name[:-4] + ".vms"
+                experiment.save_vms(out_name)
+                
+                print("Done!")
+            
+            except:
+                print(f"\n\nError: Invalid file: \n{file_name}\n\n Ignoring...\n\n")
+
+
+    print("All files converted!")
