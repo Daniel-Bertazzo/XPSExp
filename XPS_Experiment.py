@@ -6,6 +6,15 @@ import os
 from scipy.ndimage import shift
 
 
+
+
+
+# ******************** Class XPS_Experiment ********************
+
+
+
+
+
 class XPS_Experiment:
 
     def __init__(self):
@@ -593,6 +602,15 @@ class XPS_Experiment:
                 f.write(str(self.int_data[i].values) + '\n')
 
             f.write("end of experiment\n")
+
+
+
+
+
+# ******************** Auxiliary functions ********************
+
+
+
 
 
 def convert_directory(path=os.getcwd()):
