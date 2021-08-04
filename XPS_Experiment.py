@@ -613,7 +613,7 @@ class XPS_Experiment:
 
 
 
-def convert_directory(path=os.getcwd()):
+def convert_directory_vms(path=os.getcwd()):
     """Converts all `.txt` XPS experiment files in a given directory to
     `.vms`. If this function tries to process a random `.txt` file, i.e.,
     a file not containing a XPS experiment, it will ignore it.
@@ -647,3 +647,6 @@ def convert_directory(path=os.getcwd()):
 
 
     print("All files converted!")
+
+
+def 
