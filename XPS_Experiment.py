@@ -632,13 +632,13 @@ def convert_directory_vms(path=os.getcwd()):
 
                 file_name = path + "/" + file_name
 
-                experiment = XPS_Experiment()
-                experiment.read_file(file_name)
+                e = XPS_Experiment()
+                e.read_file(file_name)
                 
-                experiment.integrate()
+                e.integrate()
 
                 out_name = file_name[:-4] + ".vms"
-                experiment.save_vms(out_name)
+                e.save_vms(out_name)
                 
                 print("Done!")
             
@@ -649,4 +649,45 @@ def convert_directory_vms(path=os.getcwd()):
     print("All files converted!")
 
 
-def 
+def convert_directory_xy(path=os.getcwd()):
+    """Converts all `.txt` XPS experiment files in a given directory to
+    `.xy`. If this function tries to process a random `.txt` file, i.e.,
+    a file not containing a XPS experiment, it will ignore it.
+
+    Args:
+        path (str): path of directory containing the `.txt` files.
+            Default is the current working directory.
+    
+    """
+
+    for file_name in os.listdir(path):
+        if file_name.endswith(".txt"):
+
+            try:
+                
+                print("Generating xy file for \"", file_name, "\"", sep="")
+
+                file_name = path + "/" + file_name
+
+                e = XPS_Experiment()
+                e.read_file(file_name)
+                
+                e.integrate()
+
+                # Builds a dataframe containing two columns: the kinetic energy value and the count of photons for each of those values    
+                out_file = pd.DataFrame(data=np.vstack([e.dim1_scale, e.int_data]).T, columns=["Kinetic energy", "Count"])
+
+                # Sets path name
+                out_name = file_name[:-4] + ".xy"
+
+                # Save the xy file as a .txt
+                out_file.to_csv(out_name, index=False, header=False)
+
+
+                print("Done!")
+            
+            except:
+                print(f"\n\nError: Invalid file: \n{file_name}\n\n Ignoring...\n\n")
+
+
+    print("All files converted!")
