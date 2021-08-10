@@ -613,15 +613,19 @@ class XPS_Experiment:
 
 
 
-def convert_directory_vms(path=os.getcwd()):
+def convert_directory_vms(path=None):
     """Converts all `.txt` XPS experiment files in a given directory to
     `.vms`. If this function tries to process a random `.txt` file, i.e.,
     a file not containing a XPS experiment, it will ignore it.
 
     Args:
         path (str): path of directory containing the `.txt` files.
-            Default is the current working directory.
+            Default is the current working directory (attributed inside the function code,
+            hence the signature showing "None" as default).
     """
+
+    if path == None:
+        path = os.getcwd()
 
     for file_name in os.listdir(path):
         if file_name.endswith(".txt"):
@@ -649,16 +653,20 @@ def convert_directory_vms(path=os.getcwd()):
     print("All files converted!")
 
 
-def convert_directory_xy(path=os.getcwd()):
+def convert_directory_xy(path=None):
     """Converts all `.txt` XPS experiment files in a given directory to
     `.xy`. If this function tries to process a random `.txt` file, i.e.,
     a file not containing a XPS experiment, it will ignore it.
 
     Args:
         path (str): path of directory containing the `.txt` files.
-            Default is the current working directory.
+            Default is the current working directory (attributed inside the function code,
+            hence the signature showing "None" as default).
     
     """
+
+    if path == None:
+        path = os.getcwd()
 
     for file_name in os.listdir(path):
         if file_name.endswith(".txt"):
