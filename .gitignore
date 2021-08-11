@@ -1,8 +1,8 @@
 .ipynb_checkpoints
-*.txt
-*.pxt
-*.pxp
-*.ibw
+# *.txt
+# *.pxt
+# *.pxp
+# *.ibw
 .vscode/
 
 # Byte-compiled / optimized / DLL files
