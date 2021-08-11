@@ -15,10 +15,8 @@ In order to use this module, you must have the following Python libraries instal
 Usage
 ======
 
-This module consists of a single class contained in ``XPS_Experiment.py``, therefore there is no actual installation
-process. You just need to download the file mentioned and keep it in your project directory.
-To import it to your code and use its features, do it like so:
+This module consists of a single class contained in ``XPS_Experiment.py`` and some extra functions. therefore there is no actual installation process. You just need to download the file mentioned and keep it in your project directory. To import it to your code and use its features, do it like so:
 
 .. code-block:: python
     
-    from XPS_Experiment import XPS_Experiment
+    from XPS_Experiment import *

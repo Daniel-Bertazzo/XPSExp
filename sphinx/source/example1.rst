@@ -6,7 +6,7 @@ For this example, the data will not have any distortion.
 
 Import module
 
->>> from XPS_Experiment import XPS_Experiment
+>>> from XPS_Experiment import *
 
 Create a XPS_Experiment object and read from file
 
